@@ -59,10 +59,37 @@ var_dump(toFile($str));
 <p>Задача №3</p>
 
 <?php
-$text1 = 'Дано два текста';
-$text2 = 'Дао два текста';
+		$text1 = 'текста Дано два четыре';
+		$text2 = 'Дано три текста четыре';
 
-var_dump(similar_text($text1, $text2));
+		$comp = function($data1, $data2) {
+		$count = 0;
+		$words = [];
+			$a = explode(" ", $data1);
+			$b = explode(" ", $data2);
+			foreach ($a as $value_a) {
+				// var_dump ('итерация1 ' . $value_a);
+				foreach ($b as $value_b) {
+					// var_dump ('итерация2 ' . $value_b);
+					if ($value_a == $value_b) {
+						$count ++;
+						array_push($words, $value_b);
+					}
+				}
+			}
+			if ($count === 0) echo 'Совпадений не найден';
+			if ($count >= 1) echo 'Найдено ' . $count . " совпадение(я):";
+					foreach ($words as $value) {
+						echo "<br> " . $value;
+					}	
+		};
+
+		function cmp($str1, $str2, $func) {
+			return $func($str1, $str2);
+
+		}
+
+		cmp($text1, $text2, $comp);
 
 // Задача №4
 
