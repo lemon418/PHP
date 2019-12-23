@@ -1,3 +1,5 @@
+<!-- Задача №1 -->
+
 form_handler_HW_5.php - обработчик
 <!DOCTYPE html>
 <html lang="en">
@@ -22,3 +24,27 @@ form_handler_HW_5.php - обработчик
 </body>
 </html>
 
+<?php
+// Задача №2 
+
+function removeDir($dir) {
+
+	$includes = glob($dir.'/*');
+
+	foreach ($includes as $include) {
+
+		if(is_dir($include)) {
+
+			removeDir($include);
+		}
+
+		else {
+
+			unlink($include);
+		}
+	}
+
+	rmdir($dir);
+}
+
+removeDir('folder');
