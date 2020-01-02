@@ -151,19 +151,19 @@ mySort($arr);
 
 <?php
 // Задача №5
-	$text = "Mary Had a Little lamb and She LOVED It So";
+	$text = "Привет Из Швейцарии, JaOne";
 
 	$upCase = function($data) {
-		return strtoupper($data);
+		return mb_strtoupper($data);
 	};
 
 	$lowCase = function($data) {
-		return strtolower($data);
+		return mb_strtolower($data);
 	};
 
 	$firstToUp = function($data) {
-		$data = strtolower($data);
-		return ucwords($data); 
+		$data = mb_strtolower($data);
+		return mb_convert_case($data, MB_CASE_TITLE, 'UTF-8'); 
 	};
 
 			function conv($str, $pre) {
@@ -171,7 +171,7 @@ mySort($arr);
 				echo $pre($str);				 
 			};  
 
-conv($text, $upCase);
+conv($text, $firstToUp);
 
 ?>
 	
