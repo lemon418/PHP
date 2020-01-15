@@ -48,3 +48,12 @@ function removeDir($dir) {
 }
 
 removeDir('folder');
+
+?>
+
+
+	</body>
+</html>
+
+
+

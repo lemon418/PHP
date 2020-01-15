@@ -167,16 +167,8 @@ mySort($arr);
 	};
 
 			function conv($str, $pre) {
-				// echo $pre($str);
 				echo $pre($str);				 
 			};  
 
 conv($text, $firstToUp);
 
-?>
-	
-
-
-
-	</body>
-</html>
